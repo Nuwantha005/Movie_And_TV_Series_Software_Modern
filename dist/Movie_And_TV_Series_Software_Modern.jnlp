@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Movie_And_TV_Series_Software_Modern.jnlp">
+  <information>
+    <title>Movie_And_TV_Series_Software_Modern</title>
+    <vendor>Nuwantha Kumara</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Movie_And_TV_Series_Software_Modern.jar" size="66675" download="eager" />
+    <jar href="lib\fontawesomefx-commons-8.15.jar" size="20957" download="eager" />
+    <jar href="lib\fontawesomefx-fontawesome-4.7.0-5.jar" size="136891" download="eager" />
+    <jar href="lib\gson-2.8.1.jar" size="232620" download="eager" />
+    <jar href="lib\jfoenix-8.0.4.jar" size="2487326" download="eager" />
+    <jar href="lib\jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="lib\mysql-connector-java-5.0.7-bin.jar" size="536609" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Movie_And_TV_Series_Software_Modern" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="movie_and_tv_series_software_modern.Movie_And_TV_Series_Software_Modern"  name="Movie_And_TV_Series_Software_Modern" />
+  <update check="always"/>
+</jnlp>

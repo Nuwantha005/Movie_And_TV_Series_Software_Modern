@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="stack_Pane" stylesheets="@../resources/styleSheets/dark_theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DatabaseSetUp.DatabaseSetUpController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="main_AP" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <JFXTextField fx:id="username" labelFloat="true" layoutX="35.0" layoutY="51.0" prefHeight="39.0" prefWidth="521.0" promptText="Database Username" />
+            <JFXTextField fx:id="password" labelFloat="true" layoutX="35.0" layoutY="139.0" prefHeight="39.0" prefWidth="521.0" promptText="Database Password" />
+            <JFXButton buttonType="RAISED" layoutX="240.0" layoutY="272.0" onAction="#handleSetUpAction" style="-fx-text-fill: white;" text="Set Up" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

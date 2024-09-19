@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="root" stylesheets="@../../resources/styleSheets/dark_theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.Main_FrameController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="mainAP" prefHeight="760.0" prefWidth="1280.0" styleClass="mainFxmlClass" stylesheets="@../../resources/styleSheets/dark_theme.css">
+         <children>
+            <JFXTabPane fx:id="mainTabPane" layoutX="79.0" layoutY="65.0" prefHeight="760.0" prefWidth="1280.0" side="LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <tabs>
+                  <Tab>
+                    <content>
+                      <AnchorPane fx:id="overviewAP" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXTabPane prefHeight="760.0" prefWidth="1068.0" side="BOTTOM" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tabs>
+                                    <Tab style="-fx-pref-width: 220; -fx-pref-height: 60;" styleClass="bottom-tab">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox prefHeight="760.0" prefWidth="1296.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" cache="true" cacheHint="QUALITY" layoutX="510.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="730.0" prefWidth="293.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <ImageView fx:id="moviePoster" depthTest="ENABLE" fitHeight="722.0" fitWidth="317.0" nodeOrientation="INHERIT" onScroll="#overview_Movie_Poster_Imageview_Mouse_Scrolled_Action" pickOnBounds="true" preserveRatio="true">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" cache="true" cacheHint="QUALITY" layoutX="968.0" layoutY="10.0" prefHeight="750.0" prefWidth="453.0" spacing="1.0" HBox.hgrow="ALWAYS">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <HBox maxHeight="-Infinity" prefHeight="65.0" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <Label fx:id="movienamelbl" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="65.0" prefWidth="417.0" text="Movie Name" textFill="WHITE" wrapText="true" HBox.hgrow="ALWAYS">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="30.0" />
+                                                                     </font>
+                                                                     <padding>
+                                                                        <Insets left="10.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0">
+                                                                     <children>
+                                                                        <ImageView fx:id="moviePreviusImage" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#moviePreviousImageMouseClicked" onMouseEntered="#moviePreviousImageMouseEntered" onMouseExited="#moviePreviousImageMouseExited" onMousePressed="#moviePreviousImageMousePressed" onMouseReleased="#moviePreviousImageMouseRelesed" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../resources/images/icons8_Previous_48px.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                        <ImageView fx:id="movieRefreshImage" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#movieRefreshImageMouseClicked" onMouseEntered="#movieRefreshImageMouseEntered" onMouseExited="#movieRefreshImageMouseExited" onMousePressed="#movieRefreshImageMousePressed" onMouseReleased="#movieRefreshImageMouseRelesed" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../resources/images/icons8_Refresh_52px.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0">
+                                                                     <children>
+                                                                        <ImageView fx:id="movieNextIcon" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#nextIconMouscCileckedAction" onMouseEntered="#nextIconMouseEnteredAction" onMouseExited="#nextIconMouseExitedAction" onMousePressed="#nextIconMousePressedAction" onMouseReleased="#nextIconMouseRelesedAction" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../resources/images/icons8_Next_48px.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <Label fx:id="moviecatagerylbl" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Catagery :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="movieimdblbl" layoutY="77.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="IMDB Rating:" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="moviefranchiselbl" layoutY="72.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="412.0" text="Franchise :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="movieproducerlbl" depthTest="ENABLE" layoutY="134.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Producer :" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="moviestudiolbl" depthTest="ENABLE" layoutY="196.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Studio :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <JFXTextArea fx:id="moviedescriptionltextarea" labelFloat="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="387.0" prefWidth="375.0" promptText="Description :" style="-fx-text-fill: white;" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" top="40.0" />
+                                                               </VBox.margin>
+                                                            </JFXTextArea>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" cache="true" cacheHint="QUALITY" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="330.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXTextField fx:id="movieSearchBar" focusColor="#264cbc" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" onKeyReleased="#movie_Search_Bar_Key_Relesed_Action" prefHeight="52.0" prefWidth="311.0" promptText="Search Keyword" style="-fx-text-fill: white;" unFocusColor="WHITE" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets top="30.0" />
+                                                               </VBox.margin>
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <JFXListView fx:id="movieList" editable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#movieListMouseClickedAction" prefHeight="709.0" prefWidth="311.0" showTooltip="true" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" />
+                                                               </VBox.margin>
+                                                            </JFXListView>
+                                                         </children>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                       <graphic>
+                                          <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0" style="-fx-rotate: 270;">
+                                             <children>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                                   <image>
+                                                      <Image url="@../../resources/images/icons8_Movie_48px.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="Movies" textFill="GREEN">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </graphic>
+                                    </Tab>
+                                    <Tab style="-fx-pref-width: 220; -fx-pref-height: 60;" styleClass="bottom-tab">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox prefHeight="760.0" prefWidth="1296.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" cache="true" cacheHint="QUALITY" layoutX="510.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="730.0" prefWidth="293.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <ImageView fx:id="moviePoster1" depthTest="ENABLE" fitHeight="722.0" fitWidth="317.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" cache="true" cacheHint="QUALITY" layoutX="968.0" layoutY="10.0" prefHeight="750.0" prefWidth="453.0" spacing="1.0" HBox.hgrow="ALWAYS">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label fx:id="movienamelbl1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="512.0" text="TV Series Name" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font name="System Bold" size="30.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="moviecatagerylbl1" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Catagery :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="movieimdblbl1" layoutY="77.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="IMDB Rating:" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="moviefranchiselbl1" layoutY="72.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="412.0" text="Franchise :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <Label fx:id="movieproducerlbl1" depthTest="ENABLE" layoutY="134.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Producer :" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="moviestudiolbl1" depthTest="ENABLE" layoutY="196.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="512.0" text="Studio :" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <JFXTextArea fx:id="moviedescriptionltextarea1" labelFloat="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="387.0" prefWidth="375.0" promptText="Description :" style="-fx-text-fill: white;" wrapText="true" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" top="40.0" />
+                                                               </VBox.margin>
+                                                            </JFXTextArea>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" cache="true" cacheHint="QUALITY" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="330.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXTextField fx:id="movieSearchBar1" focusColor="#264cbc" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="311.0" promptText="Search Keyword" style="-fx-text-fill: white;" unFocusColor="WHITE" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets top="30.0" />
+                                                               </VBox.margin>
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <JFXListView fx:id="movieList1" editable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#movieListMouseClickedAction" prefHeight="709.0" prefWidth="311.0" showTooltip="true" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" />
+                                                               </VBox.margin>
+                                                            </JFXListView>
+                                                         </children>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                       <graphic>
+                                          <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0" style="-fx-rotate: 270;">
+                                             <children>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                                   <image>
+                                                      <Image url="@../../resources/images/icons8_TV_Show_50px.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="TV Series" textFill="GREEN">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </graphic>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <graphic>
+                        <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                 <image>
+                                    <Image url="@../../resources/images/icons8_Increase_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="Overview" textFill="GREEN">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="movieTab1">
+                     <content>
+                        <AnchorPane fx:id="movieManageAP" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXTabPane fx:id="movieTabPane" prefHeight="760.0" prefWidth="1068.0" side="BOTTOM" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tabs>
+                                    <Tab fx:id="movieManageTab" style="-fx-pref-width: 220; -fx-pref-height: 60;">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox layoutX="30.0" layoutY="33.0" prefHeight="700.0" prefWidth="1068.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1106.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <HBox prefHeight="849.0" prefWidth="599.0">
+                                                               <children>
+                                                                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="413.0" prefWidth="446.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <JFXTextField fx:id="movieIDField" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="ID">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXTextField>
+                                                                        <JFXTextField fx:id="movieNameField" labelFloat="true" layoutX="15.0" layoutY="30.0" maxWidth="1.7976931348623157E308" promptText="Name">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXTextField>
+                                                                        <JFXTextField fx:id="movieCatageryField" labelFloat="true" layoutX="10.0" layoutY="74.0" maxWidth="1.7976931348623157E308" promptText="Catagery">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXTextField>
+                                                                        <JFXTextField fx:id="movieIMDBField" labelFloat="true" layoutX="15.0" layoutY="30.0" maxWidth="1.7976931348623157E308" promptText="IMDB Rating">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXTextField>
+                                                                        <JFXComboBox fx:id="movieFranchiseCombo" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="444.0" promptText="Franchise">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                           <styleClass>
+                                                                              <String fx:value="combo-box-popup" />
+                                                                              <String fx:value="jfx-combo-box" />
+                                                                           </styleClass>
+                                                                        </JFXComboBox>
+                                                                        <JFXComboBox fx:id="movieProducerCombo" labelFloat="true" layoutX="10.0" layoutY="266.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="444.0" promptText="Producer">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXComboBox>
+                                                                        <JFXComboBox fx:id="movieStudioCombo" labelFloat="true" layoutX="10.0" layoutY="314.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="444.0" promptText="Studio">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXComboBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="413.0" prefWidth="161.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <JFXButton maxWidth="1.7976931348623157E308" onAction="#addmovieAction" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="Add" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                        <JFXButton layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" onAction="#editMoiveAction" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="Edit" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                        <JFXButton layoutX="10.0" layoutY="68.0" maxWidth="1.7976931348623157E308" onAction="#deleteMovieAction" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="Delete" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                        <JFXButton layoutX="10.0" layoutY="68.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="Add Actors" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                        <JFXButton layoutX="10.0" layoutY="126.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="View Actors" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                        <JFXButton layoutX="20.0" layoutY="164.0" maxWidth="1.7976931348623157E308" onAction="#newMovieAction" prefHeight="35.0" prefWidth="160.0" styleClass="jfx-button" text="New" textFill="WHITE">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </VBox.margin>
+                                                                        </JFXButton>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <JFXTextArea fx:id="moviedescriptionltextareaEdit" labelFloat="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="723.0" prefWidth="599.0" promptText="Description :" wrapText="true">
+                                                               <font>
+                                                                  <Font size="22.0" />
+                                                               </font>
+                                                               <padding>
+                                                                  <Insets bottom="50.0" left="10.0" right="10.0" top="10.0" />
+                                                               </padding>
+                                                            </JFXTextArea>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="970.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="75.0" prefWidth="364.0" VBox.vgrow="ALWAYS">
+                                                               <children>
+                                                                  <JFXTextField fx:id="movieURLField" labelFloat="true" maxWidth="1.7976931348623157E308" onKeyReleased="#movie_URL_Field_Key_Relesed" prefHeight="48.0" prefWidth="362.0" promptText="URL" HBox.hgrow="ALWAYS">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                                                                     </HBox.margin>
+                                                                  </JFXTextField>
+                                                                  <JFXButton maxWidth="1.7976931348623157E308" onAction="#browseMovieImageAction" prefHeight="48.0" prefWidth="124.0" styleClass="jfx-button" text="Browse" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                                     <padding>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                                                                     </HBox.margin>
+                                                                  </JFXButton>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                                               <children>
+                                                                  <ImageView fx:id="moviePosterEdit" fitHeight="625.0" fitWidth="469.0" nodeOrientation="INHERIT" onScroll="#edit_Movie_Poster_Imageview_Mouse_Scrolled_Action" pickOnBounds="true" preserveRatio="true" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                       <graphic>
+                                          <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0" style="-fx-rotate: 270;">
+                                             <children>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                                   <image>
+                                                      <Image url="@../../resources/images/icons8_Thumbnails_48px.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="Manage" textFill="GREEN">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </graphic>
+                                    </Tab>
+                                    <Tab fx:id="movieSearchTab" style="-fx-pref-width: 220; -fx-pref-height: 60;">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1068.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="1068.0" VBox.vgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXTextField fx:id="movieSearchKeyowrd" labelFloat="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onKeyReleased="#movie_Search_Bar_Edit_Key_Relesed_Action" prefHeight="54.0" prefWidth="920.0" promptText="Keyword" HBox.hgrow="ALWAYS">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                                                               </HBox.margin>
+                                                            </JFXTextField>
+                                                            <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" onAction="#search_Movies_Action" prefHeight="64.0" prefWidth="139.0" text="Search" textFill="WHITE">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                                                               </HBox.margin>
+                                                            </JFXButton>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <JFXTreeTableView fx:id="movieTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyReleased="#movieTableKeyRelesedAction" prefHeight="645.0" prefWidth="1068.0" showRoot="false" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                         <columnResizePolicy>
+                                                            <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                      </JFXTreeTableView>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </children></AnchorPane>
+                                       </content>
+                                       <graphic>
+                                          <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0" style="-fx-rotate: 270;">
+                                             <children>
+                                                <ImageView fitHeight="45.0" fitWidth="59.0" layoutX="3.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                                   <image>
+                                                      <Image url="@../../resources/images/icons8_Search_52px.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="Search" textFill="GREEN">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </AnchorPane>
+                                       </graphic>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <AnchorPane minHeight="200.0" minWidth="50.0" prefHeight="200.0" prefWidth="50.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 90;">
+                                 <image>
+                                    <Image url="@../../resources/images/icons8_Movie_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="-52.0" layoutY="104.0" prefHeight="50.0" prefWidth="150.0" style="-fx-rotate: 90;" text="Movies" textFill="GREEN">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
