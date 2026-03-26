@@ -1,0 +1,25 @@
+# NetBeans build output
+build/
+dist/
+
+# NetBeans private project settings (local paths, etc.)
+nbproject/private/
+
+# Compiled Java classes
+*.class
+
+# JVM crash dumps
+hs_err_pid*.log
+
+# Database credentials – do NOT commit this file
+config.txt
+
+# macOS metadata
+.DS_Store
+
+# Windows metadata
+Thumbs.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
